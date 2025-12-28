@@ -31,6 +31,10 @@ Thumbs.db
 # Claude
 .claude
 logs
+trees/
+
+# Worktree environment configs
+**/.ports.env
 
 app.config.timestamp*
 

@@ -32,6 +32,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "alert-dialog": {
+    name: "alert-dialog",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["button"],
+    component: lazy(() => import("~/registry/ui/alert-dialog.tsx")),
+    files: [{
+      path: "registry/ui/alert-dialog.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "avatar": {
     name: "avatar",
     description: "",
@@ -222,6 +236,20 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/accordion-demo.tsx")),
     files: [{
       path: "registry/examples/accordion-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "alert-dialog-demo": {
+    name: "alert-dialog-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["alert-dialog","button"],
+    component: lazy(() => import("~/registry/examples/alert-dialog-demo.tsx")),
+    files: [{
+      path: "registry/examples/alert-dialog-demo.tsx",
       type: "registry:example",
       target: ""
     }],

@@ -20,7 +20,10 @@ export default defineConfig(
         }
       },
       vite: {
-        plugins: [tailwindcss()]
+        plugins: [tailwindcss()],
+        server: {
+          port: parseInt(process.env.FRONTEND_PORT || "5173", 10)
+        }
       }
     },
     {
