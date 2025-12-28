@@ -31,7 +31,17 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/alert-dialog.tsx",
-
+        type: "registry:ui"
+      }
+    ]
+  },
+  {
+    name: "aspect-ratio",
+    type: "registry:ui",
+    dependencies: ["@kobalte/core"],
+    files: [
+      {
+        path: "ui/aspect-ratio.tsx",
         type: "registry:ui"
       }
     ]
