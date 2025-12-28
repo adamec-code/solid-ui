@@ -40,9 +40,12 @@ export const docsConfig: Config = {
           href: "/docs/components/accordion"
         },
         {
+          title: "Alert",
+          href: "/docs/components/alert"
+        },
+        {
           title: "Alert Dialog",
-          href: "/docs/components/alert-dialog",
-          status: "new"
+          href: "/docs/components/alert-dialog"
         },
         {
           title: "Avatar",

@@ -13,6 +13,17 @@ export const ui: Registry["items"] = [
     ]
   },
   {
+    name: "alert",
+    type: "registry:ui",
+    dependencies: ["@kobalte/core"],
+    files: [
+      {
+        path: "ui/alert.tsx",
+        type: "registry:ui"
+      }
+    ]
+  },
+  {
     name: "alert-dialog",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],
@@ -20,6 +31,7 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/alert-dialog.tsx",
+
         type: "registry:ui"
       }
     ]
