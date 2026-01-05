@@ -68,6 +68,10 @@ export const docsConfig: Config = {
           href: "/docs/components/button"
         },
         {
+          title: "Button Group",
+          href: "/docs/components/button-group"
+        },
+        {
           title: "Checkbox",
           href: "/docs/components/checkbox"
         },

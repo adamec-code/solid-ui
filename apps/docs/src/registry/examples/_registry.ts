@@ -178,6 +178,105 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "button-group-dropdown-menu",
+    type: "registry:example",
+    registryDependencies: ["button", "button-group", "dropdown-menu"],
+    files: [
+      {
+        path: "examples/button-group-dropdown-menu.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "button-group-input-group",
+    type: "registry:example",
+    registryDependencies: ["button", "button-group", "input-group"],
+    files: [
+      {
+        path: "examples/button-group-input-group.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "button-group-input",
+    type: "registry:example",
+    registryDependencies: ["button", "button-group", "input"],
+    files: [
+      {
+        path: "examples/button-group-input.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "button-group-nested",
+    type: "registry:example",
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "examples/button-group-nested.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "button-group-orientation",
+    type: "registry:example",
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "examples/button-group-orientation.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "button-group-select",
+    type: "registry:example",
+    registryDependencies: ["button", "button-group", "select"],
+    files: [
+      {
+        path: "examples/button-group-select.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "button-group-separator",
+    type: "registry:example",
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "examples/button-group-separator.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "button-group-size",
+    type: "registry:example",
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "examples/button-group-size.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "button-group-split",
+    type: "registry:example",
+    registryDependencies: ["button", "button-group"],
+    files: [
+      {
+        path: "examples/button-group-split.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "button-icon",
     type: "registry:example",
     registryDependencies: ["button"],

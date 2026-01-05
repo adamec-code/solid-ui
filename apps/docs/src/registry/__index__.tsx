@@ -508,6 +508,132 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "button-group-dropdown-menu": {
+    name: "button-group-dropdown-menu",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","dropdown-menu"],
+    component: lazy(() => import("~/registry/examples/button-group-dropdown-menu.tsx")),
+    files: [{
+      path: "registry/examples/button-group-dropdown-menu.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-input-group": {
+    name: "button-group-input-group",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","input-group"],
+    component: lazy(() => import("~/registry/examples/button-group-input-group.tsx")),
+    files: [{
+      path: "registry/examples/button-group-input-group.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-input": {
+    name: "button-group-input",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","input"],
+    component: lazy(() => import("~/registry/examples/button-group-input.tsx")),
+    files: [{
+      path: "registry/examples/button-group-input.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-nested": {
+    name: "button-group-nested",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["button","button-group"],
+    component: lazy(() => import("~/registry/examples/button-group-nested.tsx")),
+    files: [{
+      path: "registry/examples/button-group-nested.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-orientation": {
+    name: "button-group-orientation",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["button","button-group"],
+    component: lazy(() => import("~/registry/examples/button-group-orientation.tsx")),
+    files: [{
+      path: "registry/examples/button-group-orientation.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-select": {
+    name: "button-group-select",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","select"],
+    component: lazy(() => import("~/registry/examples/button-group-select.tsx")),
+    files: [{
+      path: "registry/examples/button-group-select.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-separator": {
+    name: "button-group-separator",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["button","button-group"],
+    component: lazy(() => import("~/registry/examples/button-group-separator.tsx")),
+    files: [{
+      path: "registry/examples/button-group-separator.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-size": {
+    name: "button-group-size",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["button","button-group"],
+    component: lazy(() => import("~/registry/examples/button-group-size.tsx")),
+    files: [{
+      path: "registry/examples/button-group-size.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-split": {
+    name: "button-group-split",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["button","button-group"],
+    component: lazy(() => import("~/registry/examples/button-group-split.tsx")),
+    files: [{
+      path: "registry/examples/button-group-split.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "button-icon": {
     name: "button-icon",
     description: "",
