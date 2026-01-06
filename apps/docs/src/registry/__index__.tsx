@@ -274,6 +274,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined
   },
+  "label": {
+    name: "label",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/label.tsx")),
+    files: [{
+      path: "registry/ui/label.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "input-group": {
     name: "input-group",
     description: "",
@@ -1311,6 +1325,20 @@ export const Index: Record<string, any> = {
     ],
     categories: undefined,
     meta: undefined
+  },
+  "label-demo": {
+    name: "label-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["label","checkbox"],
+    component: lazy(() => import("~/registry/examples/label-demo.tsx")),
+    files: [{
+      path: "registry/examples/label-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
   },
   "radio-group-demo": {
     name: "radio-group-demo",

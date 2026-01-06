@@ -652,6 +652,17 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "label-demo",
+    type: "registry:example",
+    registryDependencies: ["label", "checkbox"],
+    files: [
+      {
+        path: "examples/label-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "radio-group-demo",
     type: "registry:example",
     registryDependencies: ["radio-group", "label"],
