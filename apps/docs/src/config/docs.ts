@@ -72,6 +72,10 @@ export const docsConfig: Config = {
           href: "/docs/components/button-group"
         },
         {
+          title: "Card",
+          href: "/docs/components/card"
+        },
+        {
           title: "Checkbox",
           href: "/docs/components/checkbox"
         },

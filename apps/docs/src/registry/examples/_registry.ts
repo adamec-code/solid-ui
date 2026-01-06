@@ -365,6 +365,17 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "card-demo",
+    type: "registry:example",
+    registryDependencies: ["card", "button", "input", "label"],
+    files: [
+      {
+        path: "examples/card-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "dropdown-menu-checkboxes",
     type: "registry:example",
     registryDependencies: ["dropdown-menu"],
