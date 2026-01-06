@@ -123,6 +123,73 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "carousel-demo",
+    type: "registry:example",
+    registryDependencies: ["carousel", "card"],
+    files: [
+      {
+        path: "examples/carousel-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "carousel-size",
+    type: "registry:example",
+    registryDependencies: ["carousel", "card"],
+    files: [
+      {
+        path: "examples/carousel-size.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "carousel-spacing",
+    type: "registry:example",
+    registryDependencies: ["carousel", "card"],
+    files: [
+      {
+        path: "examples/carousel-spacing.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "carousel-orientation",
+    type: "registry:example",
+    registryDependencies: ["carousel", "card"],
+    files: [
+      {
+        path: "examples/carousel-orientation.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "carousel-api",
+    type: "registry:example",
+    registryDependencies: ["carousel", "card"],
+    files: [
+      {
+        path: "examples/carousel-api.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "carousel-plugin",
+    type: "registry:example",
+    dependencies: ["embla-carousel-autoplay"],
+    registryDependencies: ["carousel", "card"],
+    files: [
+      {
+        path: "examples/carousel-plugin.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "button-default",
     type: "registry:example",
     registryDependencies: ["button"],
