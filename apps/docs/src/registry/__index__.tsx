@@ -226,6 +226,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "dialog": {
+    name: "dialog",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/dialog.tsx")),
+    files: [{
+      path: "registry/ui/dialog.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "dropdown-menu": {
     name: "dropdown-menu",
     description: "",
@@ -1064,6 +1078,34 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/collapsible-demo.tsx")),
     files: [{
       path: "registry/examples/collapsible-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "dialog-demo": {
+    name: "dialog-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["dialog","button","field","input"],
+    component: lazy(() => import("~/registry/examples/dialog-demo.tsx")),
+    files: [{
+      path: "registry/examples/dialog-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "dialog-close-button": {
+    name: "dialog-close-button",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["dialog","button"],
+    component: lazy(() => import("~/registry/examples/dialog-close-button.tsx")),
+    files: [{
+      path: "registry/examples/dialog-close-button.tsx",
       type: "registry:example",
       target: ""
     }],
