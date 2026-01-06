@@ -1,12 +1,14 @@
 import { createSignal } from "solid-js"
 
+import { Activity, LayoutPanelLeft } from "lucide-solid"
+
 import { Button } from "~/registry/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
+  DropdownMenuGroup,
+  DropdownMenuGroupLabel,
   DropdownMenuTrigger
 } from "~/registry/ui/dropdown-menu"
 
@@ -17,25 +19,29 @@ export default function DropdownMenuCheckboxes() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger as={Button<"button">} variant="outline">
-        Open
+      <DropdownMenuTrigger as={Button} class="w-fit" variant="outline">
+        Checkboxes
       </DropdownMenuTrigger>
-      <DropdownMenuContent class="w-56">
-        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuCheckboxItem checked={showStatusBar()} onChange={setShowStatusBar}>
-          Status Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showActivityBar()}
-          disabled
-          onChange={setShowActivityBar}
-        >
-          Activity Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem checked={showPanel()} onChange={setShowPanel}>
-          Panel
-        </DropdownMenuCheckboxItem>
+      <DropdownMenuContent class="min-w-40">
+        <DropdownMenuGroup>
+          <DropdownMenuGroupLabel>Appearance</DropdownMenuGroupLabel>
+          <DropdownMenuCheckboxItem checked={showStatusBar()} onChange={setShowStatusBar}>
+            <LayoutPanelLeft />
+            Status Bar
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem
+            checked={showActivityBar()}
+            disabled
+            onChange={setShowActivityBar}
+          >
+            <Activity />
+            Activity Bar
+          </DropdownMenuCheckboxItem>
+          <DropdownMenuCheckboxItem checked={showPanel()} onChange={setShowPanel}>
+            <LayoutPanelLeft />
+            Panel
+          </DropdownMenuCheckboxItem>
+        </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   )

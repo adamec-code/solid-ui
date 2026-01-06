@@ -1,4 +1,4 @@
-import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js"
+import type { Component, ComponentProps, JSX, ParentComponent, ValidComponent } from "solid-js"
 import { mergeProps, Show, splitProps } from "solid-js"
 
 import * as DialogPrimitive from "@kobalte/core/dialog"
@@ -12,7 +12,7 @@ const Dialog: Component<DialogPrimitive.DialogRootProps> = (props) => (
   <DialogPrimitive.Root data-slot="dialog" {...props} />
 )
 
-const DialogTrigger: Component<DialogPrimitive.DialogTriggerProps> = (props) => (
+const DialogTrigger: ParentComponent<DialogPrimitive.DialogTriggerProps> = (props) => (
   <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />
 )
 

@@ -1,32 +1,44 @@
 import { createSignal } from "solid-js"
 
+import { Building2, CreditCard, Wallet } from "lucide-solid"
+
 import { Button } from "~/registry/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
+  DropdownMenuGroup,
+  DropdownMenuGroupLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "~/registry/ui/dropdown-menu"
 
 export default function DropdownMenuRadioGroupDemo() {
-  const [position, setPosition] = createSignal("bottom")
+  const [paymentMethod, setPaymentMethod] = createSignal("card")
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger as={Button<"button">} variant="outline">
-        Open
+      <DropdownMenuTrigger as={Button} class="w-fit" variant="outline">
+        Payment Method
       </DropdownMenuTrigger>
-      <DropdownMenuContent class="w-56">
-        <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup onChange={setPosition} value={position()}>
-          <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
+      <DropdownMenuContent class="min-w-56">
+        <DropdownMenuGroup>
+          <DropdownMenuGroupLabel>Select Payment Method</DropdownMenuGroupLabel>
+          <DropdownMenuRadioGroup onChange={setPaymentMethod} value={paymentMethod()}>
+            <DropdownMenuRadioItem value="card">
+              <CreditCard />
+              Credit Card
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="paypal">
+              <Wallet />
+              PayPal
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="bank">
+              <Building2 />
+              Bank Transfer
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   )
