@@ -212,33 +212,53 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined
   },
-  "collapsible": {
+  collapsible: {
     name: "collapsible",
     description: "",
     type: "registry:ui",
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/ui/collapsible.tsx")),
-    files: [{
-      path: "registry/ui/collapsible.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
+    files: [
+      {
+        path: "registry/ui/collapsible.tsx",
+        type: "registry:ui",
+        target: ""
+      }
+    ],
     categories: undefined,
-    meta: undefined,
+    meta: undefined
   },
-  "dialog": {
+  dialog: {
     name: "dialog",
     description: "",
     type: "registry:ui",
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/ui/dialog.tsx")),
-    files: [{
-      path: "registry/ui/dialog.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
+    files: [
+      {
+        path: "registry/ui/dialog.tsx",
+        type: "registry:ui",
+        target: ""
+      }
+    ],
     categories: undefined,
-    meta: undefined,
+    meta: undefined
+  },
+  "context-menu": {
+    name: "context-menu",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/context-menu.tsx")),
+    files: [
+      {
+        path: "registry/ui/context-menu.tsx",
+        type: "registry:ui",
+        target: ""
+      }
+    ],
+    categories: undefined,
+    meta: undefined
   },
   "dropdown-menu": {
     name: "dropdown-menu",
@@ -288,19 +308,21 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined
   },
-  "label": {
+  label: {
     name: "label",
     description: "",
     type: "registry:ui",
     registryDependencies: undefined,
     component: lazy(() => import("~/registry/ui/label.tsx")),
-    files: [{
-      path: "registry/ui/label.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
+    files: [
+      {
+        path: "registry/ui/label.tsx",
+        type: "registry:ui",
+        target: ""
+      }
+    ],
     categories: undefined,
-    meta: undefined,
+    meta: undefined
   },
   "input-group": {
     name: "input-group",
@@ -1074,43 +1096,97 @@ export const Index: Record<string, any> = {
     name: "collapsible-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["collapsible","button"],
+    registryDependencies: ["collapsible", "button"],
     component: lazy(() => import("~/registry/examples/collapsible-demo.tsx")),
-    files: [{
-      path: "registry/examples/collapsible-demo.tsx",
-      type: "registry:example",
-      target: ""
-    }],
+    files: [
+      {
+        path: "registry/examples/collapsible-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }
+    ],
     categories: undefined,
-    meta: undefined,
+    meta: undefined
   },
   "dialog-demo": {
     name: "dialog-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["dialog","button","field","input"],
+    registryDependencies: ["dialog", "button", "field", "input"],
     component: lazy(() => import("~/registry/examples/dialog-demo.tsx")),
-    files: [{
-      path: "registry/examples/dialog-demo.tsx",
-      type: "registry:example",
-      target: ""
-    }],
+    files: [
+      {
+        path: "registry/examples/dialog-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }
+    ],
     categories: undefined,
-    meta: undefined,
+    meta: undefined
   },
   "dialog-close-button": {
     name: "dialog-close-button",
     description: "",
     type: "registry:example",
-    registryDependencies: ["dialog","button"],
+    registryDependencies: ["dialog", "button"],
     component: lazy(() => import("~/registry/examples/dialog-close-button.tsx")),
-    files: [{
-      path: "registry/examples/dialog-close-button.tsx",
-      type: "registry:example",
-      target: ""
-    }],
+    files: [
+      {
+        path: "registry/examples/dialog-close-button.tsx",
+        type: "registry:example",
+        target: ""
+      }
+    ],
     categories: undefined,
-    meta: undefined,
+    meta: undefined
+  },
+  "context-menu-checkboxes": {
+    name: "context-menu-checkboxes",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["context-menu"],
+    component: lazy(() => import("~/registry/examples/context-menu-checkboxes.tsx")),
+    files: [
+      {
+        path: "registry/examples/context-menu-checkboxes.tsx",
+        type: "registry:example",
+        target: ""
+      }
+    ],
+    categories: undefined,
+    meta: undefined
+  },
+  "context-menu-demo": {
+    name: "context-menu-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["context-menu"],
+    component: lazy(() => import("~/registry/examples/context-menu-demo.tsx")),
+    files: [
+      {
+        path: "registry/examples/context-menu-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }
+    ],
+    categories: undefined,
+    meta: undefined
+  },
+  "context-menu-radio-group": {
+    name: "context-menu-radio-group",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["context-menu"],
+    component: lazy(() => import("~/registry/examples/context-menu-radio-group.tsx")),
+    files: [
+      {
+        path: "registry/examples/context-menu-radio-group.tsx",
+        type: "registry:example",
+        target: ""
+      }
+    ],
+    categories: undefined,
+    meta: undefined
   },
   "dropdown-menu-demo": {
     name: "dropdown-menu-demo",
@@ -1372,15 +1448,17 @@ export const Index: Record<string, any> = {
     name: "label-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["label","checkbox"],
+    registryDependencies: ["label", "checkbox"],
     component: lazy(() => import("~/registry/examples/label-demo.tsx")),
-    files: [{
-      path: "registry/examples/label-demo.tsx",
-      type: "registry:example",
-      target: ""
-    }],
+    files: [
+      {
+        path: "registry/examples/label-demo.tsx",
+        type: "registry:example",
+        target: ""
+      }
+    ],
     categories: undefined,
-    meta: undefined,
+    meta: undefined
   },
   "radio-group-demo": {
     name: "radio-group-demo",

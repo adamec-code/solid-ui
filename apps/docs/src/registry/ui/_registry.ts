@@ -157,6 +157,17 @@ export const ui: Registry["items"] = [
     ]
   },
   {
+    name: "context-menu",
+    type: "registry:ui",
+    dependencies: ["@kobalte/core"],
+    files: [
+      {
+        path: "ui/context-menu.tsx",
+        type: "registry:ui"
+      }
+    ]
+  },
+  {
     name: "dropdown-menu",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],
