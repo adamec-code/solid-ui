@@ -465,6 +465,17 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "collapsible-demo",
+    type: "registry:example",
+    registryDependencies: ["collapsible", "button"],
+    files: [
+      {
+        path: "examples/collapsible-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "dropdown-menu-demo",
     type: "registry:example",
     registryDependencies: ["dropdown-menu"],

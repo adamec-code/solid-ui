@@ -135,6 +135,17 @@ export const ui: Registry["items"] = [
     ]
   },
   {
+    name: "collapsible",
+    type: "registry:ui",
+    dependencies: ["@kobalte/core"],
+    files: [
+      {
+        path: "ui/collapsible.tsx",
+        type: "registry:ui"
+      }
+    ]
+  },
+  {
     name: "dropdown-menu",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],
