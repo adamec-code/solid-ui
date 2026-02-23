@@ -1,8 +1,16 @@
-import { For, type JSX, lazy, Match, Suspense, Switch } from "solid-js"
+import { For, type JSX, lazy, Match, Show, Suspense, Switch } from "solid-js"
 
 import { useDesignSystem } from "~/components/design-system-provider"
-import { type IconLibrary, type IconLibraryName, iconLibraries } from "~/registry/icon-libraries"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/registry/ui/select"
+import {
+  Picker,
+  PickerContent,
+  PickerGroup,
+  PickerRadioGroup,
+  PickerRadioItem,
+  PickerSeparator,
+  PickerTrigger
+} from "~/components/picker"
+import { type IconLibraryName, iconLibraries } from "~/registry/icon-libraries"
 
 const IconLucide = lazy(() =>
   import("~/registry/icons/icon-lucide").then((mod) => ({
@@ -84,50 +92,49 @@ const logos: Record<IconLibraryName, JSX.Element> = {
 
 export function IconLibraryPicker() {
   const { iconLibrary, setIconLibrary } = useDesignSystem()
+  const libraries = Object.values(iconLibraries)
+  const selectedLibrary = () => iconLibraries[iconLibrary()]
 
   return (
-    <Select
-      itemComponent={(props) => {
-        const library = props.item.rawValue as IconLibrary
-        return (
-          <SelectItem class="flex py-2" item={props.item}>
-            <div class="flex w-full flex-col gap-1">
-              <div class="font-medium text-muted-foreground text-xs">{library.title}</div>
-              <IconLibraryPreview iconLibrary={library.name} />
-            </div>
-          </SelectItem>
-        )
-      }}
-      onChange={(value) => {
-        if (value) {
-          setIconLibrary(value.name)
-        }
-      }}
-      options={Object.values(iconLibraries)}
-      optionTextValue="title"
-      optionValue="name"
-      value={iconLibraries[iconLibrary()]}
-    >
-      <SelectTrigger aria-label="Icon library" class="md:w-52">
-        <span class="font-medium">Icons:</span>
-        <SelectValue<IconLibrary>>
-          {(state) => {
-            const selected = state.selectedOption()
-            if (!selected) return ""
-
-            return (
-              <span class="flex items-center gap-2">
-                <span class="flex size-4 items-center justify-center [&_svg]:size-4">
-                  {logos[selected.name]}
-                </span>
-                <span>{selected.title}</span>
-              </span>
-            )
+    <Picker>
+      <PickerTrigger aria-label="Icon library">
+        <div class="flex min-w-0 flex-col">
+          <span class="text-muted-foreground text-xs">Icon Library</span>
+          <span class="truncate font-medium">{selectedLibrary().title}</span>
+        </div>
+        <span class="-translate-y-1/2 pointer-events-none absolute top-1/2 right-4 flex size-4 select-none items-center justify-center [&_svg]:size-4">
+          {logos[selectedLibrary().name]}
+        </span>
+      </PickerTrigger>
+      <PickerContent class="md:w-72">
+        <PickerRadioGroup
+          onChange={(value) => {
+            if (value in iconLibraries) {
+              setIconLibrary(value as IconLibraryName)
+            }
           }}
-        </SelectValue>
-      </SelectTrigger>
-      <SelectContent class="md:w-72" />
-    </Select>
+          value={iconLibrary()}
+        >
+          <PickerGroup>
+            <For each={libraries}>
+              {(library, index) => (
+                <>
+                  <PickerRadioItem class="py-2 pr-2" value={library.name}>
+                    <div class="flex w-full flex-col gap-1">
+                      <div class="font-medium text-muted-foreground text-xs">{library.title}</div>
+                      <IconLibraryPreview iconLibrary={library.name} />
+                    </div>
+                  </PickerRadioItem>
+                  <Show when={index() < libraries.length - 1}>
+                    <PickerSeparator class="opacity-50" />
+                  </Show>
+                </>
+              )}
+            </For>
+          </PickerGroup>
+        </PickerRadioGroup>
+      </PickerContent>
+    </Picker>
   )
 }
 

@@ -22,9 +22,9 @@ export function SiteHeader() {
           <div class="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
             <GitHubLink />
             <Separator orientation="vertical" />
-            <CustomizerSheet />
-            <Separator orientation="vertical" />
             <ModeToggle />
+            <Separator orientation="vertical" />
+            <CustomizerSheet />
           </div>
         </div>
       </div>
