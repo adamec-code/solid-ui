@@ -1,11 +1,11 @@
 import { A } from "@solidjs/router"
 
+import { CustomizerSheet } from "~/components/customizer-sheet"
 import { GitHubLink } from "~/components/github-link"
 import { IconLogo } from "~/components/icons"
 import { MainNav } from "~/components/main-nav"
 import { MobileNavigation } from "~/components/mobile-navigation"
 import { ModeToggle } from "~/components/mode-toggle"
-import { StyleSelect } from "~/components/style-select"
 import { Button } from "~/registry/ui/button"
 import { Separator } from "~/registry/ui/separator"
 
@@ -22,7 +22,7 @@ export function SiteHeader() {
           <div class="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
             <GitHubLink />
             <Separator orientation="vertical" />
-            <StyleSelect />
+            <CustomizerSheet />
             <Separator orientation="vertical" />
             <ModeToggle />
           </div>

@@ -53,6 +53,12 @@ importers:
       '@solidjs/start':
         specifier: ^1.2.0
         version: 1.2.0(solid-js@1.9.9)(vinxi@0.5.7)(vite@6.3.5)
+      '@tabler/icons-solidjs':
+        specifier: ^3.37.1
+        version: 3.37.1(solid-js@1.9.9)
+      chokidar:
+        specifier: ^5.0.0
+        version: 5.0.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -69,8 +75,8 @@ importers:
         specifier: ^8.6.0
         version: 8.6.0(solid-js@1.9.9)
       lucide-solid:
-        specifier: ^0.562.0
-        version: 0.562.0(solid-js@1.9.9)
+        specifier: ^0.575.0
+        version: 0.575.0(solid-js@1.9.9)
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
@@ -3140,6 +3146,19 @@ packages:
       tslib: 2.6.3
     dev: false
 
+  /@tabler/icons-solidjs@3.37.1(solid-js@1.9.9):
+    resolution: {integrity: sha512-FTSuRn3oFiNnPyV7yOMLVqMFj0fepY7cwnhWKgIH7SsauTyh9xJWpw74WfPVnpYAuTT3Pk85Hkj1fRsimgHVlw==}
+    peerDependencies:
+      solid-js: ^1.4.7
+    dependencies:
+      '@tabler/icons': 3.37.1
+      solid-js: 1.9.9
+    dev: false
+
+  /@tabler/icons@3.37.1:
+    resolution: {integrity: sha512-neLCWkuyNHEPXCyYu6nbN4S3g/59BTa4qyITAugYVpq1YzYNDOZooW7/vRWH98ZItXAudxdKU8muFT7y1PqzuA==}
+    dev: false
+
   /@tailwindcss/node@4.1.14:
     resolution: {integrity: sha512-hpz+8vFk3Ic2xssIA3e01R6jkmsAhvkQdXlEbRTk6S10xDAtiQiM3FyvZVGsucefq764euO/b8WUW9ysLdThHw==}
     dependencies:
@@ -4090,6 +4109,13 @@ packages:
     engines: {node: '>= 14.16.0'}
     dependencies:
       readdirp: 4.1.2
+    dev: false
+
+  /chokidar@5.0.0:
+    resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
+    engines: {node: '>= 20.19.0'}
+    dependencies:
+      readdirp: 5.0.0
     dev: false
 
   /chownr@3.0.0:
@@ -6493,8 +6519,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-solid@0.562.0(solid-js@1.9.9):
-    resolution: {integrity: sha512-RzxujbWUoa4KqnV+/mYPINzyf1W969bv0jukSKcGExIl96QmRuylvBQ+d0UcOeZL/ASToPOWS34p9MfdzdvS9Q==}
+  /lucide-solid@0.575.0(solid-js@1.9.9):
+    resolution: {integrity: sha512-EGdV4Kql+N/SpEJnLlgeUpTQPtarUJ8DpRWc8LpiymVCqcb2QffKMwrrG1ECY2omP+gVTZOu/5mJ3WmIj93kDg==}
     peerDependencies:
       solid-js: ^1.4.7
     dependencies:
@@ -8121,6 +8147,11 @@ packages:
   /readdirp@4.1.2:
     resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
     engines: {node: '>= 14.18.0'}
+    dev: false
+
+  /readdirp@5.0.0:
+    resolution: {integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==}
+    engines: {node: '>= 20.19.0'}
     dev: false
 
   /recast@0.23.9:

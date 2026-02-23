@@ -1,10 +1,13 @@
 import { type Accessor, createContext, createSignal, type ParentProps, useContext } from "solid-js"
 
+import type { IconLibraryName } from "~/registry/icon-libraries"
 import { STYLES, type Style } from "~/registry/styles"
 
 type DesignSystemContextType = {
   style: Accessor<Style>
   setStyle: (value: Style) => void
+  iconLibrary: Accessor<IconLibraryName>
+  setIconLibrary: (value: IconLibraryName) => void
 }
 
 const DesignSystemContext = createContext<DesignSystemContextType>()
@@ -19,6 +22,7 @@ export function useDesignSystem() {
 
 export function DesignSystemProvider(props: ParentProps) {
   const [style, rawSetStyle] = createSignal<Style>(STYLES[0])
+  const [iconLibrary, setIconLibrary] = createSignal<IconLibraryName>("lucide")
 
   const setStyle = (value: Style) => {
     rawSetStyle(value)
@@ -34,7 +38,9 @@ export function DesignSystemProvider(props: ParentProps) {
 
   const context: DesignSystemContextType = {
     style,
-    setStyle
+    setStyle,
+    iconLibrary,
+    setIconLibrary
   }
 
   return (

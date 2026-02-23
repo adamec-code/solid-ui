@@ -19,7 +19,6 @@ netlify
 .classpath
 *.launch
 .settings/
-.vscode/
 
 # Temp
 gitignore
@@ -38,5 +37,6 @@ trees/
 
 app.config.timestamp*
 
-.vscode/settings.json
+# ai related
+.references
 
