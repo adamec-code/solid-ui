@@ -23,7 +23,7 @@ export function SiteHeader() {
             <GitHubLink />
             <Separator orientation="vertical" />
             <ModeToggle />
-            <Separator orientation="vertical" />
+            <Separator class="mr-2" orientation="vertical" />
             <CustomizerSheet />
           </div>
         </div>

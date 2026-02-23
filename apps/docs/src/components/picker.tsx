@@ -25,7 +25,7 @@ const PickerTrigger = <T extends ValidComponent = "button">(
   return (
     <DropdownMenuPrimitive.Trigger
       class={cn(
-        "relative w-full shrink-0 touch-manipulation select-none rounded-xl border border-foreground/10 bg-muted/50 p-2 text-left hover:bg-muted disabled:opacity-50 data-[expanded]:bg-muted md:rounded-lg md:border-transparent md:bg-transparent",
+        "relative w-[160px] shrink-0 touch-manipulation select-none rounded-xl border border-foreground/10 bg-muted/50 p-2 text-left hover:bg-muted disabled:opacity-50 data-[expanded]:bg-muted md:w-full md:rounded-lg md:border-transparent md:bg-transparent",
         local.class
       )}
       data-slot="dropdown-menu-trigger"
@@ -47,7 +47,7 @@ const PickerContent = <T extends ValidComponent = "div">(
     <PickerPortal>
       <DropdownMenuPrimitive.Content
         class={cn(
-          "data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 no-scrollbar z-50 max-h-[min(24rem,80vh)] min-w-32 origin-(--kb-popper-content-transform-origin) overflow-y-auto overflow-x-hidden rounded-xl border-0 bg-popover p-1 text-popover-foreground shadow-md outline-none ring-1 ring-foreground/10 duration-100 data-[closed]:animate-out data-[expanded]:animate-in",
+          "data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 cn-menu-target no-scrollbar z-50 max-h-(--kb-popper-content-available-height) w-[calc(var(--kb-popper-content-available-width)-(--spacing(3.5)))] min-w-32 origin-(--kb-popper-content-transform-origin) overflow-y-auto overflow-x-hidden rounded-xl border-0 bg-popover p-1 text-popover-foreground shadow-md outline-none ring-1 ring-foreground/10 duration-100 data-[closed]:animate-out data-[expanded]:animate-in data-[closed]:overflow-hidden md:w-52",
           local.class
         )}
         data-slot="dropdown-menu-content"
@@ -99,7 +99,7 @@ const PickerItem = <T extends ValidComponent = "div">(
   return (
     <DropdownMenuPrimitive.Item
       class={cn(
-        "group/dropdown-menu-item relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 pointer-coarse:py-2.5 py-1.5 pointer-coarse:pl-3 pointer-coarse:text-base text-sm outline-hidden focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-inset:pl-8 data-[variant=destructive]:text-destructive data-disabled:opacity-50 data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "group/dropdown-menu-item relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 pointer-coarse:py-2.5 py-1.5 pointer-coarse:pl-3 pointer-coarse:text-base text-sm outline-hidden focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-inset:pl-8 data-[variant=destructive]:text-destructive data-disabled:opacity-50 data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 data-[variant=destructive]:*:[svg]:text-destructive",
         local.class
       )}
       data-inset={local.inset}

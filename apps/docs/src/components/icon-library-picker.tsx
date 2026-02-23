@@ -1,6 +1,7 @@
 import { For, type JSX, lazy, Match, Show, Suspense, Switch } from "solid-js"
 
 import { useDesignSystem } from "~/components/design-system-provider"
+import { LockButton } from "~/components/lock-button"
 import {
   Picker,
   PickerContent,
@@ -96,45 +97,51 @@ export function IconLibraryPicker() {
   const selectedLibrary = () => iconLibraries[iconLibrary()]
 
   return (
-    <Picker>
-      <PickerTrigger aria-label="Icon library">
-        <div class="flex min-w-0 flex-col">
-          <span class="text-muted-foreground text-xs">Icon Library</span>
-          <span class="truncate font-medium">{selectedLibrary().title}</span>
-        </div>
-        <span class="-translate-y-1/2 pointer-events-none absolute top-1/2 right-4 flex size-4 select-none items-center justify-center [&_svg]:size-4">
-          {logos[selectedLibrary().name]}
-        </span>
-      </PickerTrigger>
-      <PickerContent class="md:w-72">
-        <PickerRadioGroup
-          onChange={(value) => {
-            if (value in iconLibraries) {
-              setIconLibrary(value as IconLibraryName)
-            }
-          }}
-          value={iconLibrary()}
-        >
-          <PickerGroup>
-            <For each={libraries}>
-              {(library, index) => (
-                <>
-                  <PickerRadioItem class="py-2 pr-2" value={library.name}>
-                    <div class="flex w-full flex-col gap-1">
-                      <div class="font-medium text-muted-foreground text-xs">{library.title}</div>
-                      <IconLibraryPreview iconLibrary={library.name} />
-                    </div>
-                  </PickerRadioItem>
-                  <Show when={index() < libraries.length - 1}>
-                    <PickerSeparator class="opacity-50" />
-                  </Show>
-                </>
-              )}
-            </For>
-          </PickerGroup>
-        </PickerRadioGroup>
-      </PickerContent>
-    </Picker>
+    <div class="group/picker relative">
+      <Picker>
+        <PickerTrigger aria-label="Icon library">
+          <div class="flex min-w-0 flex-col">
+            <span class="text-muted-foreground text-xs">Icon Library</span>
+            <span class="truncate font-medium">{selectedLibrary().title}</span>
+          </div>
+          <span class="-translate-y-1/2 pointer-events-none absolute top-1/2 right-4 flex size-4 select-none items-center justify-center [&_svg]:size-4">
+            {logos[selectedLibrary().name]}
+          </span>
+        </PickerTrigger>
+        <PickerContent class="md:w-72">
+          <PickerRadioGroup
+            onChange={(value) => {
+              if (value in iconLibraries) {
+                setIconLibrary(value as IconLibraryName)
+              }
+            }}
+            value={iconLibrary()}
+          >
+            <PickerGroup>
+              <For each={libraries}>
+                {(library, index) => (
+                  <>
+                    <PickerRadioItem
+                      class="py-2 pr-2 *:data-[slot=dropdown-menu-radio-item-indicator]:hidden"
+                      value={library.name}
+                    >
+                      <div class="flex w-full flex-col gap-1">
+                        <div class="font-medium text-muted-foreground text-xs">{library.title}</div>
+                        <IconLibraryPreview iconLibrary={library.name} />
+                      </div>
+                    </PickerRadioItem>
+                    <Show when={index() < libraries.length - 1}>
+                      <PickerSeparator class="opacity-50" />
+                    </Show>
+                  </>
+                )}
+              </For>
+            </PickerGroup>
+          </PickerRadioGroup>
+        </PickerContent>
+      </Picker>
+      <LockButton class="-translate-y-1/2 absolute top-1/2 right-10" param="iconLibrary" />
+    </div>
   )
 }
 
