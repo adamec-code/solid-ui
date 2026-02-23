@@ -2,6 +2,8 @@
 import * as fs from "node:fs"
 import * as path from "node:path"
 
+import ts from "typescript"
+
 import { type IconLibraryName, iconLibraries } from "~/registry/icon-libraries"
 
 type IconUsage = Record<IconLibraryName, Set<string>>
@@ -60,7 +62,71 @@ function scanIconUsage() {
     }
   }
 
+  // temporary
+  mergePickerPreviewIconUsage(iconUsage)
+
   return iconUsage
+}
+
+function getPropertyName(name: ts.PropertyName) {
+  if (ts.isIdentifier(name) || ts.isStringLiteral(name) || ts.isNumericLiteral(name)) {
+    return name.text
+  }
+
+  return undefined
+}
+
+function mergePickerPreviewIconUsage(iconUsage: IconUsage) {
+  const pickerFile = path.join(process.cwd(), "src/components/icon-library-picker.tsx")
+
+  if (!fs.existsSync(pickerFile)) {
+    return
+  }
+
+  const content = fs.readFileSync(pickerFile, "utf-8")
+  const source = ts.createSourceFile(
+    pickerFile,
+    content,
+    ts.ScriptTarget.Latest,
+    true,
+    ts.ScriptKind.TSX
+  )
+
+  const visit = (node: ts.Node) => {
+    if (
+      ts.isVariableDeclaration(node) &&
+      ts.isIdentifier(node.name) &&
+      node.name.text === "PREVIEW_ICONS" &&
+      node.initializer &&
+      ts.isObjectLiteralExpression(node.initializer)
+    ) {
+      for (const property of node.initializer.properties) {
+        if (!ts.isPropertyAssignment(property)) {
+          continue
+        }
+
+        const libraryName = getPropertyName(property.name)
+        if (!libraryName || !(libraryName in iconLibraries)) {
+          continue
+        }
+
+        if (!ts.isArrayLiteralExpression(property.initializer)) {
+          continue
+        }
+
+        const usage = iconUsage[libraryName as IconLibraryName]
+        for (const element of property.initializer.elements) {
+          if (ts.isStringLiteralLike(element)) {
+            usage.add(element.text)
+          }
+        }
+      }
+    }
+
+    ts.forEachChild(node, visit)
+  }
+
+  visit(source)
 }
 
 function generateIconFiles(iconUsage: IconUsage) {
@@ -95,13 +161,17 @@ const isWatchMode = process.argv.includes("--watch")
 
 if (isWatchMode) {
   const REGISTRY_DIR = path.join(process.cwd(), "src/registry")
+  const ICON_LIBRARY_PICKER_FILE = path.join(
+    process.cwd(),
+    "src/components/icon-library-picker.tsx"
+  )
 
   async function startWatcher() {
     const { default: chokidar } = await import("chokidar")
 
     main()
 
-    const watcher = chokidar.watch(REGISTRY_DIR, {
+    const watcher = chokidar.watch([REGISTRY_DIR, ICON_LIBRARY_PICKER_FILE], {
       ignored: /(^|[/\\])\../,
       persistent: true,
       ignoreInitial: true
